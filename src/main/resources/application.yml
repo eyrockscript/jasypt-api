@@ -5,11 +5,3 @@ spring:
  application:
   name:
    jasypt-service
-
-logging:  
- config: ../conf/logback-spring.xml
- path: ../logs
- file: ${logging.path}/${spring.application.name}.log 
-endpoint:  
- logfile:   
-  external-file: ${logging.path}/${spring.application.name}.log
