@@ -1,3 +1,6 @@
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=eyrockscript_jasypt-api&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=eyrockscript_jasypt-api)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=eyrockscript_jasypt-api&metric=bugs)](https://sonarcloud.io/dashboard?id=eyrockscript_jasypt-api)
+
 # **jasypt-api**
 For jasypt encryption as rest service
 
