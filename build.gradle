@@ -13,6 +13,8 @@ buildscript {
     }
 }
 
+ext['springCloudVersion'] = 'Greenwich.M3'
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -47,12 +49,20 @@ docker {
 
 repositories {
 	mavenCentral()
+	maven { url "https://repo.spring.io/milestone" }
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
+	
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+	compile 'io.zipkin.brave:brave-instrumentation-grpc:5.5.2'
 
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4' // for gradle 5
@@ -63,4 +73,10 @@ dependencies {
 
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.2'
     compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot', version: '2.1.2'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
