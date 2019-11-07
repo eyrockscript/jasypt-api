@@ -16,10 +16,6 @@ buildscript {
 
 ext['springCloudVersion'] = 'Greenwich.M3'
 
-plugins {
-  id "org.sonarqube" version "2.7.1"
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -79,7 +75,6 @@ dependencies {
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.2'
     compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot', version: '2.1.2'
 }
-
 
 dependencyManagement {
 	imports {
