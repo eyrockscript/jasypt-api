@@ -11,7 +11,7 @@ public class JasyptDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 19945784713093012L;
-	public String keyword;
-	public String privateData;
+	private String keyword;
+	private String privateData;
 	
 }
