@@ -31,7 +31,7 @@ public class JasyptServiceImpl implements JasyptService {
 			log.error(e.getMessage(), e);
 		}
 		
-		data.put( Constants.RESPONSE ,  encrypted );
+		data.put( Constants.RESPONSE ,  String.format(ENC, encrypted) );
 
     	return data;
 	}
@@ -56,5 +56,7 @@ public class JasyptServiceImpl implements JasyptService {
     	
     	return data;
 	}
+	
+	public static final String ENC = "ENC(%s)";
 
 }
